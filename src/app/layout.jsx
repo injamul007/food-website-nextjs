@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "The Best Food Website-NextJS",
-  description: "Best Fast Food Website",
+  title: {
+    default: "Fast Food Restaurant",
+    template: "%s | Fast Food Restaurant",
+  },
+  description: "Best Fast Food Website built with NextJS",
 };
 
 export default function RootLayout({ children }) {

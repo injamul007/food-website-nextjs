@@ -1,5 +1,17 @@
 import React from "react";
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const res = await fetch(
+    ` https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`
+  );
+  const data = await res.json();
+  return {
+    title: data.details?.title || "Food Details",
+    description: data.details?.description || "Details about the food item",
+  };
+}
+
 const getSingleFoods = async (id) => {
   const res = await fetch(
     ` https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`
