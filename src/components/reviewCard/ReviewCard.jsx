@@ -1,4 +1,7 @@
 "use client"
+
+import Image from "next/image";
+
 const ReviewCard = ({ reviewData }) => {
   const { user, photo, rating, review, likes, date } = reviewData;
 
@@ -6,11 +9,13 @@ const ReviewCard = ({ reviewData }) => {
     <div className="w-full bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
       {/* User Info */}
       <div className="flex items-center gap-4">
-        <img
+        {/* <img
           src={photo}
           alt={user}
           className="w-12 h-12 rounded-full object-cover"
-        />
+        /> */}
+
+        <Image src={photo} alt={user} className="w-12 h-12 rounded-full object-cover" width={48} height={48}></Image>
 
         <div className="flex-1">
           <h4 className="text-base font-semibold text-gray-900">{user}</h4>
