@@ -4,6 +4,15 @@ const nextConfig = {
   images: {
     domains: ["randomuser.me", "i.ibb.co","www.themealdb.com"],
   },
+  async redirects() {
+    return [
+      {
+        source: '/food-details/:id',
+        destination: '/foods/:id',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
