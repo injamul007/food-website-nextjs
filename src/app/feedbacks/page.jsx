@@ -7,8 +7,11 @@ export const metadata = {
   description: 'User feedbacks for our food website',
 }
 
+export const dynamic = 'force-dynamic';
+
 const getFeedbacks = async () => {
-  const res = await fetch('http://localhost:3000/api/feedback', {cache: 'force-cache',
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/feedback`, {
+    // cache: 'force-cache',
   next: {revalidate: 60}
   });
   const data = await res.json();
